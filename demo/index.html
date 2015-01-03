@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+>
+
+<head>
+	<title>Dialog Example</title>
+	<meta name="author" content="benjamin almarza (https://github.com/troncador)"/>
+	<meta http-equiv="content-language" content="es"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="robots" content="noindex, nofollow" />
+	
+<!-- CSS -->
+	<link rel="stylesheet" type="text/css"
+		href="../bower_components/jquery-ui/themes/humanity/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"
+    	href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  </head>
+
+  <body>
+	<div  class="dialog-confirm"  id="new-dialog-confirm" style="display:none;" title="Guardar Información">
+		<p>
+			<span class="ui-icon ui-icon-alert"></span>
+			<span>Bla bla bla. Are you sure?</span>
+		</p>
+	</div>
+
+	
+    <!-- Static navbar -->
+
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Accept Dialog example</h1>
+        <p>
+          	<a id="myButtonAnchor" class="btn btn-lg btn-primary" href="#" role="button">Open Dialog &raquo;</a>
+        </p>
+		<p>
+			<button id="myButton">Open Dialog</button>
+		</p>
+      </div>
+
+    </div> 
+
+
+	<script
+		type="text/javascript"
+		src="../bower_components/jquery/dist/jquery.min.js" ></script>
+	<script
+		type="text/javascript"
+		src="../bower_components/jquery-ui/jquery-ui.min.js" ></script>
+	<script
+		type="text/javascript"
+		src="../src/widget.dialog.js" ></script>
+    <script
+    	type="text/javascript"
+    	src="../bower_components/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		$("#myButtonAnchor" ).acceptDialog({
+    			acceptFunction : function(that){
+    				alert("function create");
+    			},
+    			acceptTextButton: "Create",
+    			messageSelector : "#new-dialog-confirm",
+    			height: 300
+    		});
+    		
+      		$("#myButton" ).acceptDialog({
+    			acceptFunction : function(that){
+    				alert("function new");
+    			},
+    			acceptTextButton: "new",
+    			messageSelector : "#new-dialog-confirm",
+    			height: 400
+    			
+    		});
+    	});
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,26 @@
+{
+  "name": "doman-dialog",
+  "version": "0.0.1",
+  "authors": [
+    "Benjamín Almarza <benjamin.almarza@gmail.com>"
+  ],
+  "description": "simple dialog widget",
+  "main": "src/widget.dialog.js",
+  "keywords": [
+    "dialog",
+    "widget"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "jquery-ui": "~1.11.2",
+    "bootstrap": "~3.3.1"
+  }
+}
