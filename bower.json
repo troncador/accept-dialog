@@ -2,7 +2,7 @@
   "name": "doman-dialog",
   "version": "0.0.1",
   "authors": [
-    "Benjamín Almarza <benjamin.almarza@gmail.com>"
+    "Benjamín Almarza (https://github.com/troncador)"
   ],
   "description": "simple dialog widget",
   "main": "src/widget.dialog.js",
