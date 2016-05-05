@@ -10,75 +10,54 @@
 	<meta http-equiv="content-language" content="es"/>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="robots" content="noindex, nofollow" />
-	
+
 <!-- CSS -->
+  <link rel="stylesheet" type="text/css"
+  	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css"
-		href="../bower_components/jquery-ui/themes/humanity/jquery-ui.min.css" />
-    <link rel="stylesheet" type="text/css"
-    	href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
-  </head>
+		href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/humanity/jquery-ui.css">
+</head>
 
   <body>
-	<div  class="dialog-confirm"  id="new-dialog-confirm" style="display:none;" title="Guardar Información">
-		<p>
-			<span class="ui-icon ui-icon-alert"></span>
-			<span>Bla bla bla. Are you sure?</span>
-		</p>
-	</div>
-
-	
-    <!-- Static navbar -->
-
+		<div class="dialog-confirm"  id="run-function-dialog" style="display:none;"
+		  title="Run Function">
+		  <p>
+		    <span class="ui-icon ui-icon-alert"></span>
+		    <span>Are you sure you want to run the function?  </span>
+		  </p>
+		</div>
     <div class="container">
-
-      <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
         <h1>Accept Dialog example</h1>
         <p>
-          	<a id="myButtonAnchor" class="btn btn-lg btn-primary" href="#" role="button">Open Dialog &raquo;</a>
+          	<a id="myButtonAnchor" class="btn btn-lg btn-primary" href="#"
+						 	role="button">Open Dialog &raquo;</a>
         </p>
-		<p>
-			<button id="myButton">Open Dialog</button>
-		</p>
       </div>
-
-    </div> 
-
-
+    </div>
 	<script
 		type="text/javascript"
-		src="../bower_components/jquery/dist/jquery.min.js" ></script>
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js" ></script>
 	<script
 		type="text/javascript"
-		src="../bower_components/jquery-ui/jquery-ui.min.js" ></script>
+		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" ></script>
 	<script
 		type="text/javascript"
 		src="../src/widget.dialog.js" ></script>
-    <script
-    	type="text/javascript"
-    	src="../bower_components/dist/js/bootstrap.min.js"></script>
+
     <script type="text/javascript">
     	$(function(){
-    		$("#myButtonAnchor" ).acceptDialog({
-    			acceptFunction : function(that){
-    				alert("function create");
-    			},
-    			acceptTextButton: "Create",
-    			messageSelector : "#new-dialog-confirm",
-    			height: 300
-    		});
-    		
-      		$("#myButton" ).acceptDialog({
-    			acceptFunction : function(that){
-    				alert("function new");
-    			},
-    			acceptTextButton: "new",
-    			messageSelector : "#new-dialog-confirm",
-    			height: 400
-    			
-    		});
+				var initAcceptDialog = {
+				  acceptFunction : function(that) {
+				    alert("function create");
+				  },
+				  acceptTextButton: "RUN",
+				  messageSelector : "#run-function-dialog",
+				  height: 300
+				};
+
+				$("#myButtonAnchor").acceptDialog(initAcceptDialog);
     	});
     </script>
   </body>
 </html>
-
